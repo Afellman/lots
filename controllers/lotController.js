@@ -17,6 +17,7 @@ module.exports = {
   findOne: (req, res) => {
     console.log(req.params)
     db.collection('lot').find({ingredient: req.params.ingredient}).toArray((err, result)=>{
+      console.log('findone result', result)
       res.send(result)
     })
   },
