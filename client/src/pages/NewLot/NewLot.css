@@ -1,0 +1,28 @@
+#new-lot {
+  height: 100%;
+}
+
+#new-lot > div>  h1 {
+  text-align: center;
+}
+#lot-buttons {
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+#lot-buttons > button {
+  margin: 2px 2px;
+  font-size: 20px;
+}
+
+#lot-input {
+}
+
+#date-input {
+  padding: 20px;
+  margin: 20px;
+}

@@ -1,0 +1,14 @@
+.btn {
+  padding: 20px;
+}
+
+.btn-primary {
+  background: rgb(233, 183, 98);
+  color: black;
+  text-transform: capitalize;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: rgb(173, 125, 41);
+}
