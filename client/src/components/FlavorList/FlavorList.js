@@ -18,7 +18,7 @@ class FlavorList extends Component {
           return (
             <button
               onClick={this.props.batchChosen}
-              className='btn btn-primary'
+              className='btn btn-primary flavor-btn'
               data-object={JSON.stringify(flavor)}
               >
               {Object.keys(flavor)}

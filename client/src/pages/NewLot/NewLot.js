@@ -43,6 +43,7 @@ class NewLot extends Component {
       }
       console.log(newLotObj)
       API.newLot(newLotObj)
+      this.goBack()
     }
   }
 
@@ -58,6 +59,7 @@ class NewLot extends Component {
       }
       API.newCompany(newCompanyObj)
     }
+    this.goBack()
   }
 
   processInput = (e) =>{
@@ -66,24 +68,28 @@ class NewLot extends Component {
     this.setState({[id] : e.target.value})
   }
 
+  goBack = () =>{
+    this.setState({showInput: false, companyInput: '', lotInput: '', companyLotInput: ''})
+  }
+
   render() {
     return (
-      <div id='new-lot'>
+      <div id='new-lot' className='container'>
         {this.state.showInput
           ? <div>
-              <button className='back-button' to='/newLot' onClick={()=>this.setState({showInput: false, companyInput: '', lotInput: '', companyLotInput: ''})}>&lt;</button>
+              <button className='back-button' onClick={this.goBack}>&lt;</button>
               <h1> Current Lot =  {this.state.currentLot.lot} </h1>
               <h1> Current Company =  {this.state.currentLot.company} </h1>
               <div id='new-lot-div'>
-                <span style={{textAlign: 'center', marginLeft: '50px'}}>New Lot, Same Company</span>
+                <h5>New Lot, Same Company</h5>
                 <input placeholder='Lot Number' value={this.state.lotInput} id='lotInput' onChange={this.processInput}/>
-                <button id='save-company' className='btn btn-primary' onClick={this.processNewLot}>Save</button>
+                <button className='save-lot btn btn-primary' onClick={this.processNewLot}>Save</button>
               </div>
               <div id='new-company-div'>
-                <span style={{textAlign: 'center', marginLeft: '50px'}}>New Company, New Lot</span>
+                <h5>New Company, New Lot</h5>
                 <input placeholder='Company Name'  value={this.state.companyInput} id='companyInput' onChange={this.processInput}/>
                 <input placeholder='Lot Number'  value={this.state.companyLotInput} id='companyLotInput' onChange={this.processInput}/>
-                <button id='save-company' className='btn btn-primary' onClick={this.processNewCompany}>Save</button>
+                <button className='save-lot btn btn-primary' onClick={this.processNewCompany}>Save</button>
               </div>
             </div>
           : <div id='lot-buttons'>

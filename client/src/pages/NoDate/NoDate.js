@@ -54,8 +54,8 @@ class NoDate extends Component {
     return (
       <div class='container'>
         {this.state.showDatePicker ? 
-        <div>
-          <input id="date-input" type="date" value={this.state.date} onChange={this.updateDate}/>
+        <div id='nodate-input'>
+          <input type="date" value={this.state.date} onChange={this.updateDate}/>
           <button type="submit" className="btn btn-dark" onClick={this.submitBatch}>Submit</button>
         </div> 
         : <div>

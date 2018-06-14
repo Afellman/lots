@@ -1,12 +1,5 @@
 #flavor-list {
   height: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  display: flex;
-}
-#flavor-list > button {
-  margin: 2px 2px;
-  font-size: 20px;
 }

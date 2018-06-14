@@ -1,10 +1,31 @@
 #new-batch {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
-#new-batch-inputs > * {
+#new-batch .flavor-btn {
+  margin: 5px 0px;
+  font-size: 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+#date-input {
+  margin: auto;
+  margin-top: 30vh;
+  display: block;
+  padding: 20px;
+}
+
+#submit-nodate {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+}
+
+#submit-nodate > .btn {
+  width: 150px;
   margin-right: 10px;
+
+}
+#new-batch-inputs > * {
 }

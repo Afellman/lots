@@ -60,6 +60,7 @@ class NewBatch extends Component {
     newBatch.flavor = this.state.batchName
     console.log(newBatch)
     API.newBatch(newBatch, 'batch').then((res)=>{console.log(res)})
+    this.goBack()
   }
 
   processNoDate = () =>{
@@ -69,19 +70,27 @@ class NewBatch extends Component {
     newBatch.flavor = this.state.batchName
     console.log(newBatch)
     API.newBatch(newBatch, 'noDate').then((res)=>{console.log(res)})
+    this.goBack()
+  }
+  
+  goBack = () =>{
+    this.setState({showDate: false, showFlavors: true, batchChosen: '', batchName: ''})
   }
 
   render() {
     return (
-      <div id='new-batch'>
+      <div id='new-batch' className='container'>
         {this.state.showFlavors ?
           <FlavorList batchChosen={this.batchChosen}/>
           : null }
           {this.state.showDate ?
             <div id='new-batch-inputs'>
-              <input id="date-input" type="date" value={this.state.date} onChange={this.updateDate}/>
-              <button type="submit" className="btn btn-dark" onClick={this.submitBatch}>Submit</button>
-              <button type='submit' className='btn btn-dark no-date' onClick={this.processNoDate}>No Date</button>
+            <button className='back-button' onClick={this.goBack}>&lt;</button>
+                <input id="date-input" type="date" value={this.state.date} onChange={this.updateDate}/>
+              <div id='submit-nodate'>
+                <button type="submit" className="col-md-4 btn btn-dark" onClick={this.submitBatch}>Submit</button>
+                <button type='submit' className=' col-md-4 btn btn-dark no-date' onClick={this.processNoDate}>No Date</button>
+            </div>
             </div>
           : null}
       </div>

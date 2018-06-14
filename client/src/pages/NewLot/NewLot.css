@@ -7,22 +7,44 @@
 }
 #lot-buttons {
   height: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  display: flex;
 }
 
 #lot-buttons > button {
-  margin: 2px 2px;
+  width: 100%;
+  margin: 5px 0px;
   font-size: 20px;
 }
 
 #lot-input {
 }
 
-#date-input {
-  padding: 20px;
-  margin: 20px;
+#new-lot-div {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#new-lot-div input {
+  padding: 15px;
+}
+#new-company-div {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#new-company-div input {
+  padding: 15px;
+}
+
+.save-lot {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 786px) {
+  .save-lot {
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+  }
 }

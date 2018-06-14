@@ -8,3 +8,22 @@
   z-index: 99;
   background: rgb(63, 185, 94);
 }
+
+#nodate-input {
+  margin: auto;
+  margin-top: 30vh;
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+#nodate-input > input {
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+#nodate-input > button {
+  width: 150px;
+}

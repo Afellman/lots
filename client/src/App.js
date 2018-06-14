@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-    <div style={{height: "100%"}}>
+    <div style={{paddingBottom: '10px', maxWidth: '100vw'}}>
       <Navbar />
       <Switch>
         <Route exact path="/" component={NewBatch} />
