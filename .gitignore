@@ -1,4 +1,5 @@
 .DS_STORE
 node_modules/
-
-
+nohup.out
+./client/nohup.out
+ip_log.txt
