@@ -29,18 +29,22 @@ class NewBatch extends Component {
     let month = d.getMonth()+2
     console.log(month, d)
     API.getAllLots().then((res) =>{
+      res.data.forEach(element => {
+        delete element['_id']
+      });
       this.setState({currentLots: res.data})
     })
     this.setState({date: this.formatDate(new Date)})
   }
+
   updateDate = (event) => {
     event.preventDefault()
     this.setState({date: event.target.value})
   }
 
-
   batchChosen = (e) => {
     let batchObject = JSON.parse(e.target.getAttribute('data-object'))
+    console.log(this.state.currentLots)
     for (let i in batchObject){
       for(let j in batchObject[i]){
         for(let k in this.state.currentLots){
