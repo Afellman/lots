@@ -22,6 +22,23 @@ class Batches extends Component {
         {/* {this.state.batches.length > 0 ? 
         <h1>{this.state.batches[0]['baba']['chickpea']['ingredient']}</h1>
         : null } */}
+        <table border='3'>
+          <tr>
+            <th>Flavor </th>
+            <th>Date Exp</th>
+            <th>Date Made</th>
+            <th>90 day</th>
+          </tr>
+          <tbody id='tbody'>
+          </tbody>
+      </table>
+
+      {this.state.batches.map((el)=>{
+        return (
+          <p>{JSON.stringify(el)}</p>
+
+        )
+      })} 
         <button className='get-batches'>Get More</button>
       </div>
     )
