@@ -44,9 +44,9 @@ class NewBatch extends Component {
 
   batchChosen = (e) => {
     let batchObject = JSON.parse(e.target.getAttribute('data-object'))
-    console.log(this.state.currentLots)
     for (let i in batchObject){
       for(let j in batchObject[i]){
+        console.log(j)
         for(let k in this.state.currentLots){
           if (this.state.currentLots[k]['ingredient'] == j){
             batchObject[i][j] = this.state.currentLots[k]
@@ -58,11 +58,15 @@ class NewBatch extends Component {
   }
 
   submitBatch = () => {
-    let newBatch = this.state.batchChosen
+    let newBatch = {};
+    let ingredients = this.state.batchChosen[this.state.batchName];
     newBatch.expDate = this.state.date
     newBatch.dateMade = this.formatDate(new Date)
     newBatch.flavor = this.state.batchName
-    console.log(newBatch)
+    newBatch.lots = [];
+    for(let i in ingredients) {
+      newBatch.lots.push(ingredients[i])
+    }
     API.newBatch(newBatch, 'batch').then((res)=>{console.log(res)})
     this.goBack()
   }

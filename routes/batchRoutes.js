@@ -10,6 +10,6 @@ router.route('/delete')
 router.route('/noDates')
   .get(batchController.getNoDates)
   
-router.route('/getTen')
+router.route('/getTen/:skip')
   .get(batchController.getTen)
   module.exports = router;

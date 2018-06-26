@@ -22,7 +22,7 @@ export default {
   deleteOne: (flavor, dateMade, collection) => {
     return axios.post('/batch/delete', {flavor: flavor, dateMade: dateMade, collection: collection})
   },
-  getTenBatches: ()=>{
-    return axios.get('/batch/getTen')
+  getTenBatches: (skip)=>{
+    return axios.get(`/batch/getTen/${skip}`)
   }
 }

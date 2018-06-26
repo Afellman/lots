@@ -39,9 +39,11 @@ module.exports = {
       })
   },
   getTen: (req, res) => {
-    db.collection('batch').find().limit(10).toArray((err, result) =>{
-      res.send(result)
-    })
+    let skips = parseInt(req.params.skip, 10)
+      db.collection('batch').find().limit(10).skip(skips).toArray((err, result) =>{
+        res.send(result)
+      })
+
   }
 }
 
