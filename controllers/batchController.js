@@ -40,7 +40,7 @@ module.exports = {
   },
   getTen: (req, res) => {
     let skips = parseInt(req.params.skip, 10)
-      db.collection('batch').find().limit(10).skip(skips).toArray((err, result) =>{
+      db.collection('batch').find().sort({'expDate': -1}).limit(10).skip(skips).toArray((err, result) =>{
         res.send(result)
       })
 
