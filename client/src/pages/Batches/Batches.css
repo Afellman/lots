@@ -1,0 +1,36 @@
+#lot-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(128, 128, 128, 0.466); 
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#get-batches {
+  position: fixed;
+  bottom: 5vw;
+  right: 10vw;
+}
+
+#lot-modal table {
+  background: white;
+  margin-bottom: 10px;
+}
+
+tbody > tr > th {
+  padding: 5px;
+}
+
+tbody > tr > td {
+  padding: 5px;
+}
+
+#lot-modal button {
+  display: block;
+}

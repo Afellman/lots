@@ -13,3 +13,6 @@ router.route('/noDates')
 router.route('/getTen/:skip')
   .get(batchController.getTen)
   module.exports = router;
+
+router.route('/updateOne')
+  .post(batchController.updateOne)

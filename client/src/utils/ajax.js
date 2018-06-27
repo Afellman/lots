@@ -19,10 +19,10 @@ export default {
   newCompany: (company) => {
     return axios.post('/lots/new', company)
   },
-  deleteOne: (flavor, dateMade, collection) => {
-    return axios.post('/batch/delete', {flavor: flavor, dateMade: dateMade, collection: collection})
+  deleteOne: (id, collection) => {
+    return axios.post('/batch/delete', {id: id, collection: collection})
   },
   getTenBatches: (skip)=>{
     return axios.get(`/batch/getTen/${skip}`)
-  }
+  },
 }
