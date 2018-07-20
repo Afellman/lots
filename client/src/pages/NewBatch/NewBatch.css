@@ -2,12 +2,6 @@
   height: 100vh;
 }
 
-#new-batch .flavor-btn {
-  margin: 5px 0px;
-  font-size: 20px;
-  width: 100%;
-  display: inline-block;
-}
 
 #date-input {
   margin: auto;

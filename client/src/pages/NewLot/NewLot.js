@@ -5,8 +5,6 @@ import data from '../../utils/data';
 import { Link } from 'react-router-dom'
 
 
-// ** Need to change so that there is only one save button for either a new lot **
-// ** a new company or both ** 
 class NewLot extends Component {
   // -- Setting the state
 
@@ -76,7 +74,7 @@ class NewLot extends Component {
     return (
       <div id='new-lot' className='container'>
         {this.state.showInput
-          ? <div>
+          ? <div className='lot-input-div'>
               <button className='back-button' onClick={this.goBack}>&lt;</button>
               <h1> Current Lot =  {this.state.currentLot.lot} </h1>
               <h1> Current Company =  {this.state.currentLot.company} </h1>
@@ -95,7 +93,9 @@ class NewLot extends Component {
           : <div id='lot-buttons'>
           {data.ingredients.map((ingredient, index)=>{
             return (
+            <div className='ghost'>
               <button className='btn btn-primary' onClick={this.showLotInput}>{ingredient}</button>
+              </div>
             )
           })}
           </div>

@@ -13,9 +13,9 @@ const Nav = (props) => {
           <li>
             <Link className={window.location.pathname === "/newlot" ? "active" : ""}  to="/newlot">New Lot</Link>
           </li>
-          <li>
+         {/* <li>
             <Link className={window.location.pathname === "/nodate" ? "active" : ""}  to="/nodate">No Date</Link>
-          </li>
+          </li>*/}
           <li>
             <Link className={window.location.pathname === "/batches" ? "active" : ""}  to="/batches">Batches</Link>
           </li>

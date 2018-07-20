@@ -22,20 +22,19 @@ module.exports = {
     })
   },
   saveOne: (req, res) => {
-    console.log(req.body)
-    let {ingredient, lot, company}  = req.body
-    // Getting the current lot collection and writing it to lot_backups
-    // before updating it. 
-    db.collection('lot').find({}).toArray((err, result)=>{
-      result.push({date: new Date})
-      db.collection('lot_backups').insertOne({result}, (err, res)=> {
-        if (err) {console.log(err)}
-        db.collection('lot').update({"ingredient": ingredient}, {$set : {'lot' : lot, "company": company}}, (err, result)=> {
-          if (err) console.log(err, 'db.save error')
-          console.log('New Lot Saved!')
+      let {ingredient, lot, company}  = req.body
+      // Getting the current lot collection and writing it to lot_backups
+      // before updating it. 
+      db.collection('lot').find({}).toArray((err, result)=>{
+        result.push({date: new Date})
+        db.collection('lot_backups').insertOne({result}, (err, res)=> {
+          if (err) {console.log(err)}
+          db.collection('lot').update({"ingredient": ingredient}, {$set : {'lot' : lot, "company": company}}, (err, result)=> {
+            if (err) console.log(err, 'db.save error')
+            console.log('New Lot Saved!')
+          })
         })
       })
-    })
   },
 
 }

@@ -16,6 +16,7 @@ class FlavorList extends Component {
       <div id='flavor-list'>
         {data.flavorsWithIngredients.map((flavor)=> {
           return (
+          <div className='ghost'>
             <button
               onClick={this.props.batchChosen}
               className='btn btn-primary flavor-btn'
@@ -23,6 +24,7 @@ class FlavorList extends Component {
               >
               {Object.keys(flavor)}
             </button>
+            </div>
           )
         })}
       </div>
