@@ -4,7 +4,7 @@ import NewBatch from './pages/NewBatch/'
 import NewLot from './pages/NewLot/'
 import NoDate from './pages/NoDate/'
 import Batches from './pages/Batches/'
-import Totals from './pages/Totals/'
+import Totals from './pages/Totals/s'
 import Navbar from './components/nav'
 
 
