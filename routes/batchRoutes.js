@@ -16,3 +16,6 @@ router.route('/getTen/:skip')
 
 router.route('/updateOne')
   .post(batchController.updateOne)
+
+router.route('/all')
+  .get(batchController.getAll);

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NewBatch from './pages/NewBatch/'
 import NewLot from './pages/NewLot/'
-import NoDate from './pages/NoDate/'
 import Batches from './pages/Batches/'
 import Totals from './pages/Totals/'
 import Navbar from './components/nav'

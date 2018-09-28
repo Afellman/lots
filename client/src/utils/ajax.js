@@ -25,4 +25,7 @@ export default {
   getTenBatches: (skip)=>{
     return axios.get(`/batch/getTen/${skip}`)
   },
+  getAllBatches: () => {
+    return axios.get('/batch/all');
+  }
 }
