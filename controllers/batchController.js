@@ -49,6 +49,13 @@ module.exports = {
         if (err) console.log(err, 'db.save error')
         console.log('Batch updated')
       })
+  },
+  getAll: (req, res) => {
+   db.collection('batch').find({}).toArray(function(error, documents) {
+       if (error) throw error;
+           res.send(documents);
+          
+    })
   }
 }
 
