@@ -5,6 +5,7 @@
   "proxy": "http://127.0.0.1:3001",
   "dependencies": {
     "axios": "^0.18.0",
+    "objects-to-csv": "^1.2.1",
     "popper.js": "^1.14.3",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",

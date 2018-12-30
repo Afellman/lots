@@ -8,12 +8,14 @@ MongoClient.connect(MONGODB_URI, (err, client) => {
 })
 
 module.exports = {
+
   findAll: (req, res) => {
     db.collection('lot').find({}).toArray((err, result) =>{
       console.log(result)
       res.send(result)
     })
   },
+  
   findOne: (req, res) => {
     console.log(req.params)
     db.collection('lot').find({ingredient: req.params.ingredient}).toArray((err, result)=>{
@@ -21,6 +23,7 @@ module.exports = {
       res.send(result)
     })
   },
+  
   saveOne: (req, res) => {
       let {ingredient, lot, company}  = req.body
       // Getting the current lot collection and writing it to lot_backups

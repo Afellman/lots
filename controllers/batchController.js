@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1/";
-var ObjectId = require('mongodb').ObjectID;
+let ObjectId = require('mongodb').ObjectID;
 let db;
 
 MongoClient.connect(MONGODB_URI, (err, client) => {
@@ -51,10 +51,10 @@ module.exports = {
       })
   },
   getAll: (req, res) => {
-   db.collection('batch').find({}).toArray(function(error, documents) {
-       if (error) throw error;
-           res.send(documents);
-          
+    db.collection('batch').find({}).toArray((error, documents)=> {
+       if (error) {throw error;}
+       console.log(documents, "DOCS!!!!!!!!!!!!!!!!!!!!!!!!!")
+       res.send(documents);
     })
   }
 }
