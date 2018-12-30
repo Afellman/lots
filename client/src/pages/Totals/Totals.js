@@ -12,16 +12,46 @@ class Totals extends Component {
   }
 
   componentWillMount(){
-    API.getAllBatches(data =>{
+    API.getAllBatches().then(data=>{
       console.log(data)
-      this.setState({allBatches : data})
+      data.data.sort(function(a,b){
+        return new Date(b.dateMade) - new Date(a.dateMade);
+      });
+      this.setState({allBatches : data.data})
     })
   }
 
+  exportAll = () =>{
+  }
   render() {
     return (
       <div id='totalContainer' className='container'>
-        Totals
+      <button className='exportBtn' onClick={this.exportAll}>Export</button>
+        {this.state.allBatches.map((el, i)=>{
+          return(
+            <div key={i} id="allBatches">
+              <table>
+                <thead>
+                  <tr>
+                    <th>{el.dateMade}</th>
+                    <th>{el.flavor}</th>
+                    <th>{el.expDate}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {el.lots ? el.lots.map((element, index)=>{
+                  return(
+                    <tr key={index}>
+                      <td>{element.ingredient}</td>
+                      <td>{element.company}</td>
+                      <td>{element.lot}</td>
+                    </tr>
+                  )}): null}
+                </tbody>
+              </table>
+            </div>
+            )}
+          )}
       </div>
     );
   }
